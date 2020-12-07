@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    	<!-- Bootstrap CDN -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
+    <style type="text/css">
+        hr{
+            border:1px solid #fBfBfB;
+            border-bottom:1px solid rgba(0,0,0,2);
+        }
+        body{
+            font-family: 'Source Sans Pro', sans-serif;
+            background-image: url(https://images.unsplash.com/photo-1515462277126-2dd0c162007a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+            background-size: 100% 1000px;
+            background-position: center;
+            background-repeat: no-repeat;
+            color:white;
+        }
+        html{
+            height: 100%;
+        }
+        .form{
+            width: 50%; 
+            margin: 25px auto;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>USER REGISTRATION</h1>
+                <div class="form">
+                    <hr>
+                    <form action="/register" method="POST">
+                        <div class="form-group mt-3">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <label for="prof">Fullname</label>
+                            <input type="text" class="form-control" id="prof" name="prof"placeholder="Fullname">
+                        </div>
+                        <div class="form-group">
+                            <label for="university">University name</label>
+                            <input type="text" class="form-control" id="university" name="university" placeholder="University">
+                        </div>
+                        <div class="form-group">
+                            <label for="pass">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                        </div>
+                        <p>Sign up  as : </p><hr>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="typeOfUser" id="exampleRadios1" value="teacher" >
+                            <label class="form-check-label" for="exampleRadios1">
+                              Teacher
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="typeOfUser" id="exampleRadios2" value="student">
+                            <label class="form-check-label" for="exampleRadios2">
+                              Student
+                            </label>
+                          </div>
+                       
+                        <button type="btn" class="btn btn-primary btn-block btn-lg mt-3">Submit</button>
+                        <a href="/" class="btn btn-success btn-block btn-lg mt-3">Go Back</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

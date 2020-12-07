@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Teacher's DashBoard</title>
+	<!-- Bootstrap CDN -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- Font awesome -->
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- CSS -->
+	
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap" rel="stylesheet">
+
+	<style>
+		.box{
+	height:250px;
+	border:10px solid white;
+	padding-top: 5%;
+	text-align: center;
+	border-radius: 20px;
+	color:white;
+}
+.box:hover{
+	background-color: black;
+}
+.num{
+	position: absolute;
+	right:118px;
+	bottom: 25px;
+	height: 25px;
+	width: 25px;
+	border-radius: 50%;
+	background-color: #ff2c74;
+	color: #fff;
+	line-height: 25px;
+	text-align: center;
+}
+
+body{
+	font-family: 'Mulish', sans-serif;
+	font-weight: normal;
+}
+#icon{
+	
+	font-size: 5rem;
+}
+#b1{
+	background-color: orange;
+}
+#b2{
+	background-color: red;
+}
+#b3{
+	background-color: steelblue;
+}
+#b4{
+	background-color: #ebd234;
+}
+#b5{
+	background-color: lightgreen;
+}
+#b6{
+	background-color: #8f42db;
+}
+img{
+	height: 500px;
+	width: 100%;
+}
+#username{
+	color:red;
+}
+#Hno{
+	color:steelblue;
+}
+.links{
+	color: white;
+}
+.links:hover{
+	color: white;
+}
+.navbar-light .navbar-brand{
+	color:steelblue;
+}
+.navbar-light .navbar-brand:hover{
+	color:steelblue;
+}
+.navbar-light .navbar-nav .nav-link{
+	color:white;
+}
+.navbar-light .navbar-nav .nav-link:hover{
+	color:steelblue;
+}
+#phone{
+	color: steelblue;
+}
+.contact{
+	color: lightgreen;
+}
+#map{
+	color:red;
+}
+#footer{
+	background-color: #232323;
+	color:white;
+}
+	</style>
+</head>
+<body>
+    <% if(currentUser.isTeacher){ %>
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+            <a class="navbar-brand" href="/dashboard">Dashboard</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link">Signed in as <%=currentUser.username%></a>
+                     </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="/logout">LogOut <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <img src="https://image.freepik.com/free-vector/plain-background-with-female-teacher-with-stick_1308-42614.jpg">
+        <div class="d-flex justify-content-center my-4">
+                <h2>Welcome <span id="username"><%= currentUser.prof %></span> 
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-4 box" id="b1">
+                    <a href="/assignment/new" class="links">
+                        <i class="fa fa-upload" id="icon" aria-hidden="true"></i>
+                        <h2>Upload Assignments</h2>
+                    </a>
+                </div>
+                <div class="col-12 col-md-4 box" id="b2">
+                    <a href="/assignment/show" class="links">
+                        <i class="fa fa-eye" id="icon" aria-hidden="true"></i>
+                        <h2>View Assignments</h2>
+                    </a>
+                </div>
+                <div class="col-12 col-md-4 box" id="b3">
+                    <a href="/test/new" class="links">
+                        <i class="fa fa-list-alt" id="icon" aria-hidden="true"></i>
+                        <h2>Make test</h2>
+                    </a>
+                </div>
+                
+            
+        </div>
+    <% }else { %>
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+            <a class="navbar-brand" href="/dashboard">Dashboard</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link">Signed in as <%=currentUser.username%></a>
+                     </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="/logout">LogOut <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <img src="https://www.solutiontree.com/blog/wp-content/uploads/2017/11/3250_Glass-nov.jpg">
+        <div class="d-flex justify-content-center my-4">
+                <h2>Welcome <span id="username"><%= currentUser.prof %></span> 
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 box" id="b1">
+                    <a href="/assignment/show" class="links">
+                        <i class="fa fa-eye" id="icon" aria-hidden="true"></i>
+                        <h2>View Assignments</h2>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 box" id="b2">
+                    <a href="/test/show" class="links">
+                        <i class="fa fa-list-alt" id="icon" aria-hidden="true"></i>
+                        <h2>Take test</h2>
+                    </a>
+                </div>
+                
+                
+            </div>
+    <% } %>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

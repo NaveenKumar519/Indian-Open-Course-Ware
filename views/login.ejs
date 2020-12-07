@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Member Login</title>
+	<!-- Bootstrap CDN -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Google fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
+	<style type="text/css">
+		hr{
+			border:1px solid #fBfBfB;
+			border-bottom:1px solid rgba(0,0,0,2);
+		}
+		h1{
+			text-align:center;
+		}
+		body{
+            font-family: 'Source Sans Pro', sans-serif;
+            background-image: url(https://images.unsplash.com/photo-1516796181074-bf453fbfa3e6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color:white;
+            text-shadow:1px 4px 4px black;
+        }
+        html{
+        	height: 100%;
+        }
+        .form{
+        	width: 40%; 
+        	margin: 25px auto;
+        }
+        
+	</style>
+</head>
+<body>
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1>USER AUTHENTICATION</h1>
+				<div class="form">
+					<hr>
+					<form action="/login" method="POST">
+						<div class="form-group">
+							<label for="user"><i class="fa fa-user-o" aria-hidden="true"></i> Username</label>
+							<input type="text" class="form-control" id="user" name="username" placeholder="Enter Username">
+						</div>
+						<div class="form-group">
+							<label for="pass"><i class="fa fa-unlock" aria-hidden="true"></i> Password</label>
+							<input type="password" class="form-control" id="pass" name="password" placeholder="Enter Password">
+						</div>
+                        <button type="btn" class="btn btn-primary btn-lg btn-block mt-4">Submit</button>
+                        <a href="/" class="btn btn-success btn-lg btn-block mt-4">Go Back</a>
+						
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Assignments</title>
+
+    <!-- Bootstrap CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap" rel="stylesheet">
+
+    <style type="text/css">
+    .form{
+	width: 80%;
+	margin: 20px auto;
+}
+.form-control{
+    width: 200px;
+}
+.view{
+    /* border: 1px solid red; */
+    justify-content: center;
+    margin-left: 18%;
+    margin-top: 100px;
+}
+#details{
+	height:100px;
+}
+
+body{
+	font-family: 'Source Sans Pro', sans-serif;
+		
+	
+}
+#phone{
+	color: steelblue;
+}
+.contact{
+	color: lightgreen;
+}
+#map{
+	color:red;
+}
+#footer{
+	background-color: #232323;
+	color:white;
+}
+.navbar-light .navbar-brand{
+	color:white;
+}
+.navbar-light .navbar-brand:hover{
+	color:steelblue;
+}
+.navbar-light .navbar-nav .nav-link{
+	color:white;
+}
+.navbar-light .navbar-nav .nav-link:hover{
+	color:steelblue;
+}
+.jumbotron{
+	/*background-color: steelblue;*/
+	color:#232323;
+}
+#icon{
+	font-size:3.3rem;
+}
+.btn{
+	margin-top: 50px;
+	margin-left:50%;
+}
+.submit{
+    margin: 10px 400px;
+}
+.button{
+    width : 200px;
+}
+    </style>
+
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <a class="navbar-brand" href="/dashboard">Dashboard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item ">
+                <a class="nav-link">Signed in as <%=currentUser.username%></a>
+             </li>
+            <li class="nav-item mx-2">
+                <a class="nav-link" href="/logout">LogOut <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+            </li>
+        </ul>
+    </div>
+    </nav>
+    <div class="jumbotron p-2 mt-3">
+        <div class="container-fluid">
+            <h1 class="display-4"><i class="fa fa-upload" aria-hidden="true"></i>Upload Assignments</h1>
+            <p class="lead">Welcome to Upload section</p>
+            <hr class="my-4">
+            <p>Here you can upload assignments.</p>
+        </div>
+     </div>
+     <div class="view">
+        <form action="/assignment/" method="POST" enctype="multipart/form-data" >
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                  <label for="inputSubject">
+                      Subjects<br>
+                      <select name ="subject" id="inputSubject" >
+                      <option selected value ="<%= subjects[0].subjectName%>"><%= subjects[0].subjectName %></option>
+                      <% for(var i=1; i<subjects.length; i++){ %>
+                          <option value ="<%= subjects[i].subjectName%>"><%= subjects[i].subjectName%></option>
+                      <% } %>
+                      </select>
+                  </label>
+              </div>
+              <div class="form-group col-md-4">
+                  <label for="inputChapter">
+                      Chapters
+                      <select name ="chapter" id="inputSubject" >
+                      <!-- <option selected value="<%= subjects[0].chapters[0].chapterName %>"><%= subjects[0].chapters[0].chapterName %></option> -->
+                      <% for(var i=0; i<subjects.length; i++){ %>
+                          <% for(var j=0; j<subjects[i].chapters.length; j++){ %>
+                              <option value="<%= subjects[i].chapters[j].chapterName%>"><%= subjects[i].chapters[j].chapterName%></option> 
+                          <% } %>
+                          
+                      <% } %>
+                      </select>
+                  </label>
+              </div>
+        
+             
+              <div class="form-group col-md-4">
+                <label for="myfile">
+                  <i class="fa fa-upload" id="icon" aria-hidden="true"></i>
+                </label>
+                <input hidden type="file" id="myfile" name="image" />
+              </div>
+            </div>
+            <div class="row">
+                <div class="submit">
+                  <button class="btn-lg btn-success button">submit</button>
+                </div>
+              
+            </div>
+            
+          </form>
+      </div>
+      
+   
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+<!--  -->

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS only -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <!-- Font awesome -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <style type="text/css">
+    h1{
+        margin-left: 40%;
+    }
+    h2{
+        margin-left: 44%;
+    }
+    body {
+        font-family: "Source Sans Pro", sans-serif;
+
+        /*font-weight: normal;*/
+      }
+      #phone {
+        color: steelblue;
+      }
+      .contact {
+        color: lightgreen;
+      }
+      #map {
+        color: red;
+      }
+      #footer {
+        background-color: #232323;
+        color: white;
+      }
+      .navbar-light .navbar-brand {
+        color: white;
+      }
+      .navbar-light .navbar-brand:hover {
+        color: steelblue;
+      }
+      .navbar-light .navbar-nav .nav-link {
+        color: white;
+      }
+      .navbar-light .navbar-nav .nav-link:hover {
+        color: steelblue;
+      }
+      .jumbotron {
+        /*background-color: steelblue;*/
+        color: #232323;
+      }
+      .Scoreboard{
+          display: inline-block;
+          justify-content:center;
+          margin-top:10%;
+          margin-left: 45%;
+          font-size: 5rem;
+          border: 2px solid red;
+          border-radius: 100%;
+          background-color:yellow;
+          height: 200px;
+          width:200px;
+          text-align: center;
+      }
+      .score{
+          margin-top:37px;
+      }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand" href="/dashboard">Dashboard</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item ">
+              <a class="nav-link">Signed in as <%=currentUser.username%></a>
+           </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="/logout"
+                >LogOut <i class="fa fa-sign-out" aria-hidden="true"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <div class="jumbotron p-2 mt-3">
+        <div class="container-fluid">
+          <h1 class="display-4">
+             <strong> Test Results</strong>
+          </h1>
+          <p class="lead"></p>
+          <hr class="my-4" />
+          <p>
+            <h2>Your score is </h2>
+          </p>
+        </div>
+    
+    </div>
+    <div class="Scoreboard">
+        
+       <div class="score"><%= marks %>/<%= test.answers.length%></div> 
+    </div>
+
+</body>
+</html>
